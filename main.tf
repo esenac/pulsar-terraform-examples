@@ -43,12 +43,7 @@ resource "pulsar_namespace" "namespaces" {
       for obj in toset(local.namespaces-map): "${obj.tenant}.${obj.namespace}" => obj
   }
   tenant    = each.value.tenant
-  namespace = each.value.namespace
-  retention_policies {
-    retention_minutes    = "1600"
-    retention_size_in_mb = "10000"
-  }
-  
+  namespace = each.value.namespace 
   depends_on = [
     pulsar_tenant.tenants
   ]
