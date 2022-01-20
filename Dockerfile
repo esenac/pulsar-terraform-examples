@@ -1,4 +1,4 @@
-ARG BASE_IMAGE=apachepulsar/pulsar:2.7.3
+ARG BASE_IMAGE=apachepulsar/pulsar:2.8.1
 FROM debian:stretch-slim as tf
 
 ARG TERRAFORM_VERSION=1.1.2
