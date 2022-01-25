@@ -58,6 +58,12 @@ resource "pulsar_topic" "topics" {
   topic_type = "persistent"
   topic_name = each.value.topic
   partitions = 1
+
+  retention_policies {
+    retention_time_minutes = 1600
+    retention_size_mb = 20000
+  }
+
   depends_on = [
     pulsar_namespace.namespaces
   ]
